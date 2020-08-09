@@ -1,4 +1,3 @@
-#include "simple_tokenizer.h"
 #include <algorithm>
 #include <cctype>
 #include <iostream>
@@ -7,9 +6,11 @@
 #include <string>
 #include <vector>
 
+#include "simple_tokenizer.h"
+
 namespace simple_tokenizer {
 SimpleTokenizer::SimpleTokenizer(const char **azArg, int nArg) {}
-std::unique_ptr<PinYin> SimpleTokenizer::pinyin = std::make_unique<PinYin>();
+std::unique_ptr<PinYin> SimpleTokenizer::pinyin(new PinYin());
 
 enum class TokenCategory {
   SPACE,
